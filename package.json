@@ -1,0 +1,7 @@
+{
+  "name": "DailyAlgorithm",
+  "version": "0.0.1",
+  "dependencies": {
+    "should": "^11.1.0"
+  }
+}
