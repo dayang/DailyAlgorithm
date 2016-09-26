@@ -17,3 +17,13 @@ describe("sort algorithms",function(){
         should(array).eql([-2,0,0,1,2,3,12,12,12,34,34,56]);
     });
 });
+
+describe("binary Search",function(){
+    var array = [1,2,3,5,12,23,34];
+    it("should return 1 with target 2",function(){
+       should(Algorithm.binarySearch(array, 2)).equal(1);
+    });
+    it("should return -1 with target 6",function(){
+        should(Algorithm.binarySearch(array, 6)).equal(-1);
+    });
+});

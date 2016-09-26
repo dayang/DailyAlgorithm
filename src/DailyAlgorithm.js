@@ -45,4 +45,21 @@ DailyAlgorithm.prototype.quickSort = function(array){
     }
 };
 
+//binarySearch 二分查找
+// 返回目标元素的下标，若没有返回-1
+DailyAlgorithm.prototype.binarySearch = function(array, target){
+    var low = 0, high = array.length - 1, mid;
+    while(low <= high){
+        mid = Math.floor((low + high) / 2);
+        if(array[mid] === target)
+            return mid;
+        if(target > array[mid]){
+            low = mid + 1;
+        }else{
+            high = mid - 1;
+        }
+    }
+    return -1;
+};
+
 module.exports =new DailyAlgorithm();
