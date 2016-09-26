@@ -16,6 +16,11 @@ describe("sort algorithms",function(){
         Algorithm.quickSort(array);
         should(array).eql([-2,0,0,1,2,3,12,12,12,34,34,56]);
     });
+
+    it('insertSort right',function(){
+        Algorithm.insertSort(array);
+        should(array).eql([-2,0,0,1,2,3,12,12,12,34,34,56]);
+    })
 });
 
 describe("binary Search",function(){

@@ -45,6 +45,18 @@ DailyAlgorithm.prototype.quickSort = function(array){
     }
 };
 
+//insertSort 插入排序
+DailyAlgorithm.prototype.insertSort = function(array){
+    var i, j, len = array.length, temp;
+    for(i = 1; i < len; i++){
+        temp = array[i];              //temp保存a[i]值，a[i]会被覆盖
+        for(j = i - 1; j >= 0 && array[j] > temp; j--){
+            array[j+1] = array[j];
+        }
+        array[j+1] = temp;
+    }
+};
+
 //binarySearch 二分查找
 // 返回目标元素的下标，若没有返回-1
 DailyAlgorithm.prototype.binarySearch = function(array, target){
