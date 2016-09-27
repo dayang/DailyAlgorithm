@@ -57,6 +57,34 @@ DailyAlgorithm.prototype.insertSort = function(array){
     }
 };
 
+//mergeSort 归并排序
+DailyAlgorithm.prototype.mergeSort = function(array){
+    function merge(low, mid, high){
+        var temp = [];
+        var i = low, j = mid + 1, k = 0;
+        while(i <= mid && j <= high){
+            temp[k++] = array[i] <= array[j] ? array[i++] : array[j++];
+        }
+        while(i <= mid) temp[k++] = array[i++];
+        while(j <= high) temp[k++] = array[j++];
+
+        for(i = 0; i < k; i++){
+            array[low + i] = temp[i];
+        }
+    }
+
+    function mergeRecursive(low, high){
+        if(low < high){
+            var mid = Math.floor((low + high) / 2);
+            mergeRecursive(low, mid);
+            mergeRecursive(mid + 1, high);
+            merge(low, mid, high);
+        }
+    }
+
+    mergeRecursive(0, array.length - 1);
+};
+
 //binarySearch 二分查找
 // 返回目标元素的下标，若没有返回-1
 DailyAlgorithm.prototype.binarySearch = function(array, target){
